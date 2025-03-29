@@ -72,6 +72,9 @@ function M.format_message(msg, args, selected_args)
 		local success, result = pcall(function()
 			return string.format(msg, table.unpack(format_args))
 		end)
+		if not success then
+			wezterm.log_error(("Formatting error: " .. result))
+		end
 		return success and result or msg .. "(" .. result .. ")"
 	end
 
@@ -86,6 +89,8 @@ function M.format_message(msg, args, selected_args)
 	else
 		err = "(incorrect type of argument selection)"
 	end
+
+	wezterm.log_error("Formatting error: " .. msg .. " " .. err)
 
 	return msg .. " " .. err
 end
