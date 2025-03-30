@@ -1,6 +1,6 @@
 local wezterm = require("wezterm") --[[@as Wezterm]] --- this type cast invokes the LSP module for Wezterm
 
----@type { setup: fun(config: table, opts: table)}
+---@type { setup: fun(opts: table)}
 local dev = wezterm.plugin.require("https://github.com/chrisgve/dev.wezterm")
 
 local M = {}
@@ -10,7 +10,8 @@ local function init()
 		keywords = { "http", "chrisgve", "listeners", "wezterm" },
 		auto = true,
 	}
-	wezterm.log_info(dev.setup(opts))
+	local plugin_dir = dev.setup(opts)
+	print(plugin_dir)
 end
 
 init()
