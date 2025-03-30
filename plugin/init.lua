@@ -10,7 +10,7 @@ local function init()
 		keywords = { "http", "chrisgve", "listeners", "wezterm" },
 		auto = true,
 	}
-	_ = dev.setup(opts)
+	wezterm.log_info(dev.setup(opts))
 end
 
 init()
