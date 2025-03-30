@@ -6,7 +6,11 @@ local dev = wezterm.plugin.require("https://github.com/chrisgve/dev.wezterm")
 local M = {}
 
 local function init()
-	_ = dev.setup({ "http", "chrisgve", "listeners", "wezterm" }, { auto = true })
+	local opts = {
+		keywords = { "http", "chrisgve", "listeners", "wezterm" },
+		auto = true,
+	}
+	_ = dev.setup(opts)
 end
 
 init()
