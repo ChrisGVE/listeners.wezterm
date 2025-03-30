@@ -16,8 +16,8 @@ end
 
 init()
 
-local listener = require("listener")
 local state = require("state")
+local listener = require("listener")
 
 -- stylua: ignore start
 M.state = {
