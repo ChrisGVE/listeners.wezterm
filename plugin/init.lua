@@ -10,8 +10,7 @@ local function init()
 		keywords = { "http", "chrisgve", "listeners", "wezterm" },
 		auto = true,
 	}
-	local plugin_dir = dev.setup(opts)
-	print(plugin_dir)
+	_ = dev.setup(opts)
 end
 
 init()
