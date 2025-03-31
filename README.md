@@ -146,6 +146,16 @@ listeners.config(event_listeners, {
 
 Check the `examples` directory for more comprehensive examples.
 
+## Contributions
+
+Suggestions, Issues, and PRs are welcome!
+
+The features currently implemented are the ones that address common needs, but your workflow might differ. If you have any proposals on how to improve the plugin, please feel free to make an issue or even better a PR!
+
+- For bug reports, please provide steps to reproduce and relevant error messages
+- For feature requests, please explain your use case and why it would be valuable
+- For PRs, please ensure your code follows the existing style and includes appropriate documentation
+
 ## License
 
 MIT
