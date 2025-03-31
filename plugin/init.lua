@@ -29,7 +29,7 @@ M.state = {
   },
   data = {
     get = function(key) return state:getData(key) end,
-    set = function(key, value) return state:setValue(key,value) end,
+    set = function(key, value) return state:setData(key, value) end,
     remove = function(key) return state:removeData(key) end,
   },
   counters = {
@@ -38,6 +38,15 @@ M.state = {
     increment = function(key, increment) return state:incrementCounter(key, increment) end,
     decrement = function(key, decrement) return state:decrementCounter(key, decrement) end,
     remove = function(key) return state:removeCounter(key) end,
+  },
+  functions = {
+    get = function(key) return state:getFunction(key) end,
+    set = function(key, value, options) return state:setFunction(key, value, options) end,
+    call = function(key, ...) return state:callFunction(key, ...) end,
+    safecall = function(key, ...) return state:safeCallFunction(key, ...) end,
+    remove = function(key) return state:removeFunction(key) end,
+    exists = function(key) return state:existsFunction(key) end,
+    get_options = function(key) return state:getFunctionOptions(key) end,
   },
 }
 -- stylua: ignore end
