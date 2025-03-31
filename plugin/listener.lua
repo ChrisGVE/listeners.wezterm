@@ -4,8 +4,13 @@ local utils = require("utils")
 
 local listeners = {}
 
+local default_opts = {
+	toast_timeout = 2000,
+}
+
 ---@param event string
 ---@param listener EventListener
+---@param opts listener_opt
 local function register_event(event, listener)
 	wezterm.on(event, function(...)
 		local sections = utils.get_sections(event)
@@ -38,14 +43,15 @@ local function register_event(event, listener)
 end
 
 ---@param event_listeners EventListeners
-function listeners.setup_listeners(event_listeners)
+---@param opts? listener_opt
+function listeners.setup_listeners(event_listeners, opts)
 	for event, listener_setup in pairs(event_listeners) do
 		if type(listener_setup) == "table" and listener_setup[1] ~= nil then
 			for _, listener in ipairs(listener_setup) do
-				register_event(event, listener)
+				register_event(event, listener, opts)
 			end
 		else
-			register_event(event, listener_setup)
+			register_event(event, listener_setup, opts)
 		end
 	end
 end

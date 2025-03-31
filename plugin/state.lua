@@ -1,7 +1,7 @@
 local StateManager = {}
 StateManager.__index = StateManager
 
----@return metatable
+---@return InternalState
 function StateManager.new()
 	local self = {
 		flags = {},

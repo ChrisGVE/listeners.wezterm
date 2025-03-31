@@ -15,10 +15,11 @@ end
 
 init()
 
-local state = require("state")
 local listener = require("listener")
+local state = require("state")
 
 -- stylua: ignore start
+---@class State
 M.state = {
   flags = {
     get = function(key) return state:getFlag(key) end,
@@ -42,8 +43,9 @@ M.state = {
 -- stylua: ignore end
 
 ---@param event_listeners EventListeners
-function M.config(event_listeners)
-	listener.setup_listeners(event_listeners)
+---@param opts listener_opt
+function M.config(event_listeners, opts)
+	listener.setup_listeners(event_listeners, opts)
 end
 
 return M
