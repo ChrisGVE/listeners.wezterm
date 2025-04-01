@@ -2,6 +2,8 @@ local wezterm = require("wezterm") --[[@as Wezterm]] --- this type cast invokes 
 
 local M = {}
 
+M.split_cache = {}
+
 -- Split a dot separated string into sections in a table
 ---@param str string dot separated string
 ---@return table sections array of sections from the input string
