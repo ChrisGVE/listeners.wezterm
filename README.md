@@ -15,6 +15,7 @@ A plugin for WezTerm that provides enhanced event listener capabilities with per
 ```lua
 -- In your wezterm.lua
 local wezterm = require('wezterm')
+---@type Listeners
 local listeners = wezterm.plugin.require('https://github.com/username/listeners.wezterm')
 ```
 
@@ -29,14 +30,14 @@ local event_listeners = {
         toast_message = "Window resized to %dx%d",
         toast_arg = 1,
     },
-    
+
     -- Event listener with custom function
     ["key-a"] = {
         fn = function(args)
             wezterm.log_info("The 'a' key was pressed!")
         end,
     },
-    
+
     -- Multiple listeners for one event
     ["update-status"] = {
         { fn = function(args) wezterm.log_info("First handler") end },
@@ -103,7 +104,7 @@ end
 listeners.state.functions.set("complex_calculation", function(x, y)
     -- Complex calculation
     return x * y
-end, { 
+end, {
     safe = true,  -- Use safe execution with error handling
 })
 ```
@@ -145,6 +146,10 @@ listeners.config(event_listeners, {
 ## Examples
 
 Check the `examples` directory for more comprehensive examples.
+
+## Type annotations
+
+Thanks to [DrKJeff16](https://github.com/DrKJeff16/wezterm-types) for building annotations for this plugin.
 
 ## Contributions
 
