@@ -163,4 +163,4 @@ The features currently implemented are the ones that address common needs, but y
 
 ## License
 
-MIT
+Apache License 2.0
